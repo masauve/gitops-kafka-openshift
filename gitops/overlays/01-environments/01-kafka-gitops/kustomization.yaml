@@ -6,7 +6,6 @@ namespace: kafka-dev
 resources:
   - namespace.yaml
   - kafka-gitops-admin-rolebinding.yaml
-  - cpu-memory-quota-resourcequota.yaml
 
 patchesJson6902:
   - target:
