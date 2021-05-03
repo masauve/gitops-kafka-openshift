@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: kafka-dev
+
+resources:
+  - namespace.yaml
+  - kafka-gitops-admin-rolebinding.yaml
+  - cpu-memory-quota-resourcequota.yaml
+
+patchesJson6902:
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: RoleBinding
+      name: kafka-controller-admin
+    path: kafka-gitops-admin-rolebinding-patch.yaml

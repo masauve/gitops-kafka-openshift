@@ -1,0 +1,6 @@
+- op: add
+  path: /subjects/-
+  value:
+    kind: ServiceAccount
+    name: kafka-gitops-application-controller
+    namespace: kafka-dev

@@ -1,0 +1,17 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: environments-kakfa
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: environments-kafka
+  source:
+    path: gitops/overlays/01-environments/00-kafka-dev
+    repoURL: https://github.com/masauve/gitops-kafka-openshift.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

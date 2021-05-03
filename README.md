@@ -1,0 +1,1 @@
+# gitops-kafka-openshift
